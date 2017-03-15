@@ -1,2 +1,2 @@
 # TheQuizGame
-Online multiplayer quiz game written in JavaScript.
+Online multiplayer quiz game written in JavaScript. Push Test.
