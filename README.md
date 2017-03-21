@@ -9,8 +9,8 @@ Online multiplayer quiz game written in JavaScript.
 ![](design/newtopic.png)
 ![](design/Highscores.png)
 ![](design/game.png)
-![](design/game type2.png)
-![](design/game end.png)
+![](design/game_type2.png)
+![](design/game_end.png)
 
 ##XP system
 After each game you are rewarded with experience points (XP) based on your performance in the game. Maximum points for each game are 300 XP. The points earned are the sum of:
