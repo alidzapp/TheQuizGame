@@ -1,7 +1,7 @@
 # TheQuizGame
 Online multiplayer quiz game written in JavaScript. 
 
-##Design:
+## Design:
 ![](design/signin.png)
 ![](design/signup.png)
 ![](design/dashboard.png)
@@ -12,7 +12,7 @@ Online multiplayer quiz game written in JavaScript.
 ![](design/game_type2.png)
 ![](design/game_end.png)
 
-##XP system
+## XP system
 After each game you are rewarded with experience points (XP) based on your performance in the game. Maximum points for each game are 300 XP. The points earned are the sum of:
 
 - Match score: the points you get for your right answered questions, the faster you answer the more points you get (maximum 160)
