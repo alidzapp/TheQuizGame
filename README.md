@@ -4,15 +4,15 @@ Online multiplayer quiz game written in JavaScript.
 https://theqgame.herokuapp.com/
 
 ## Design:
-![](design/signin.png)
-![](design/signup.png)
-![](design/dashboard.png)
-![](design/topics.png)
-![](design/newtopic.png)
-![](design/Highscores.png)
-![](design/game.png)
-![](design/game_type2.png)
-![](design/game_end.png)
+![](docs/design/signin.png)
+![](docs/design/signup.png)
+![](docs/design/dashboard.png)
+![](docs/design/topics.png)
+![](docs/design/newtopic.png)
+![](docs/design/Highscores.png)
+![](docs/design/game.png)
+![](docs/design/game_type2.png)
+![](docs/design/game_end.png)
 
 ## XP system
 After each game you are rewarded with experience points (XP) based on your performance in the game. Maximum points for each game are 300 XP. The points earned are the sum of:
