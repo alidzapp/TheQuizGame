@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = process.env.PORT || '8080';
+app.set('port', port);
+
+/**
+ * Create server.
+ */
+
+app.listen(port, function () {
+        console.log('App server started on port ' + port);
+});
+
