@@ -1,0 +1,25 @@
+<div class="container">
+    
+    <form class="form-horizontal" method="post" action="/auth/signin">
+        <fieldset>
+            <div class="form-group">
+                <label for="email" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="email" name="email" type="text" value="{{data.email}}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input class="form-control" type="password" id="password" name="password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
