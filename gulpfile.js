@@ -57,7 +57,7 @@ gulp.task('sass', function () {
     */
     return gulp.src('./public/stylesheets/scss/*.scss')
         .pipe(sass({
-            outputStyle: 'nested',
+            outputStyle: 'compressed',
             //imagePath: 'images/',
             //precision: 3,
             errLogToConsole: true

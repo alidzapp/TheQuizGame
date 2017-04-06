@@ -1,18 +1,65 @@
 .auth{
     width: 500px;
-    height:auto;
-    border: 2px, simple $brand-warning;
+    height:auto;    
+    margin-top: 50px;
     @include border-radius($radius);
     @include box-shadow($shadow);    
-    input{
-        width: 230px;
-    }
-}
+    
+    .nav{
+        font: 30px 'Script MT Bold';       
+        li{
+            a{
+                color: $gray-dark;                
+            }
+            a:hover, a:focus{                
+                background: none;                
+            }
+        }
+        li.active{
+            a{
+                color: $brand-success;
+            }
+        }
+        #or{
+            font-size: 20px;
+            text-align: center;
+        }
 
+    }
+    .btndiv{
+        text-align: center;
+    }
+    #signup-tab{
+
+        .form-control{
+            width: 50%;
+            
+        }
+    }
+
+}
 .logo{    
-    img{
+    /*img{
         width: 700px;
         display: block;
         margin: 0 auto;
+    }*/
+    .text{
+        width: 700px;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        font: 100px 'Script MT Bold';
+        color:$brand-success;
+        span{
+            color:$brand-warning;
+        }
+    }
+}
+.messages{
+    margin-top: 20px;
+    #messages{        
+        width: 400px;
+        margin: auto;
     }
 }
