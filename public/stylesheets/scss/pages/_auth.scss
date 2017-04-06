@@ -1,0 +1,18 @@
+.auth{
+    width: 500px;
+    height:auto;
+    border: 2px, simple $brand-warning;
+    @include border-radius($radius);
+    @include box-shadow($shadow);    
+    input{
+        width: 230px;
+    }
+}
+
+.logo{    
+    img{
+        width: 700px;
+        display: block;
+        margin: 0 auto;
+    }
+}

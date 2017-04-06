@@ -30,9 +30,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 app.use('/public', express.static(__dirname + '/public'));
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(validator());

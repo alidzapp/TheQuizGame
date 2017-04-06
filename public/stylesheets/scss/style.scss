@@ -1,6 +1,8 @@
 //@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "mixins";
+@import "bootswatchvariables";
 @import "variables";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
 @import "bootswatch";
-@import "partials/auth";
+@import "pages/auth";
+

@@ -1,3 +1,4 @@
+'use strict'
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const validator = require('express-validator');
@@ -47,17 +48,19 @@ passport.use('local-signup', new LocalStrategy({
                 }                
             }
         });
-
+        let confirmError = false;
         if (req.body.email !== req.body.confirmemail){
             req.flash('error', "Email mismatch");
+            confirmError = true;
         }
 
         if(req.body.password !== req.body.confirmpassword){
             req.flash('error', "Password mismatch");
+            confirmError = true;
         }
 
         req.getValidationResult().then(function (results) {
-            if (!results.isEmpty()/*es a req.flash ures e*/ ) {
+            if (!results.isEmpty() || confirmError) {
                 results.array().forEach(function (error) {
                     req.flash('error', error.msg);
                 });                          
@@ -116,7 +119,6 @@ passport.use('local-signin', new LocalStrategy({
 ));
 
 passport.serializeUser((user, done) => {  
-    console.log(user); 
     done(null, user.getUserEmail());
 });
 
