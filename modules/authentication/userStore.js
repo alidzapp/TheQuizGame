@@ -13,10 +13,16 @@ class UserStore {
 
     getUserByEmail(email, callback) {
         this.userdb.findOne({ email }, (err, found) => {
-            if (found) {
-                const user = new User(found.email, found.passwordHash);
-                user.setPlayedTopics(user.playedTopics);
-                user.setGamesPlayed(user.gamesPlayed);
+            if (found) {               
+                const user = 
+                    new User(found.username, 
+                             found.name,
+                             found.email, 
+                             found.country,                             
+                             found.passwordHash
+                    );                                
+                user.setPlayedTopics(found.playedTopics);
+                user.setGamesPlayed(found.gamesPlayed);
                 callback(null, user);
             } else {
                 callback(null, false);
@@ -31,6 +37,12 @@ class UserStore {
             } else if (found) {
                 callback(null, false);
             } else if (!found) {
+                userObj.playedTopics = [];
+                userObj.gamesPlayed = {
+                            wins: 0,
+                            losses: 0, 
+                            draws: 0
+                        };
                 this.userdb.insert(userObj, (err, userFromDb) => {
                     callback(null, userFromDb);
                 });

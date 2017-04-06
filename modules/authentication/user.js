@@ -6,19 +6,17 @@ module.exports = class User {
         this._email = email;
         this._country = country;
         this._passwordHash = passwordHash;
-        this._playedTopics = new Set();
-        this._gamesPlayed = {
-            wins: 0,
-            losses: 0, 
-            draws: 0
-        };
+        this._playedTopics = {};
+        this._gamesPlayed = {};
     }
   
     setPlayedTopics(playedTopics) {
-        if (playedTopics) {        
+        let ptSet = new Set();
+        if (playedTopics) {    
             for(let topic of playedTopics){
-                this._playedTopics.add(topic);
+                ptSet.add(topic);
             }      
+            this._playedTopics = ptSet;
         }
     }
 
@@ -63,7 +61,7 @@ module.exports = class User {
         return this._country;
     }
 
-    authenticate(trialHash) {
+    validPassword(trialHash) {
         return this._passwordHash === trialHash;
     }
 

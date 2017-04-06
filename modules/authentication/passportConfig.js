@@ -78,7 +78,10 @@ passport.use('local-signup', new LocalStrategy({
                         if (err || !user) {                            
                             return done(null, false, { message: 'Something went wrong' });
                         } else {
-                            return done(null, user, { message: "Successful signup"});
+                            userStore.getUserByEmail(user.email, (err, user) => {
+                                return done(null, user, { message: "Successful signup"});
+                            });
+                            
                         }
                     });
 
@@ -94,15 +97,15 @@ passport.use('local-signin', new LocalStrategy({
     passwordField: 'password',
     passReqToCallback: true,
 },
-    function (req, username, password, done) {
-        userStore.getUserByName(username, (err, user) => {
+    function (req, username, password, done) {        
+        userStore.getUserByEmail(username, (err, user) => {
             if (err) {
                 done(err);
             } else if (!user) {
-                done(null, false, { message: 'Incorrect username' });
+                done(null, false, { message: 'Incorrect email' });
             } else {
                 const passwordHash = hasher(password);
-                if (user.authenticate(passwordHash)) {
+                if (user.validPassword(passwordHash)) {
                     done(null, user);
                 } else {
                     done(null, false, { message: 'Incorrect password' });
@@ -112,11 +115,12 @@ passport.use('local-signin', new LocalStrategy({
     }
 ));
 
-passport.serializeUser((user, done) => {    
-    done(null, user.email);
+passport.serializeUser((user, done) => {  
+    console.log(user); 
+    done(null, user.getUserEmail());
 });
 
-passport.deserializeUser((email, done) => {
+passport.deserializeUser((email, done) => {    
     userStore.getUserByEmail(email, (err, user) => {
         if (err) {
             done(err);

@@ -10,7 +10,6 @@ authRouter.route('/auth')
             additionalscripts: true,
             additionalstylesheets : true
         });
-        
     });
 
 
@@ -18,19 +17,14 @@ authRouter.route('/auth/signin')
     .post(passport.authenticate('local-signin', {
         successRedirect: '/',
         failureRedirect: '/auth',
-        failureFlash: true,
-        successFlash: 'Welcome!',
-        //failureFlash: 'Wrong email, or password.'
+        failureFlash: true
     }));
 
 authRouter.route('/auth/signup')
     .post(passport.authenticate('local-signup', {
         successRedirect: '/',
         failureRedirect: '/auth',
-        failureFlash: true,
-       // badRequestMessage: '',
-        successFlash: 'Successful signup!',
-        //failureFlash: 'Signup failed.'
+        failureFlash: true
     }));
 
 authRouter.use('/auth/logout', function (req, res) {
