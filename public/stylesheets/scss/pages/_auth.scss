@@ -30,20 +30,21 @@
         text-align: center;
     }
     #signup-tab{
-
-        .form-control{
-            width: 50%;
-            
+        .inner_form_wrapper{
+            padding: 0px;
+        }
+        .left_column, .right_column{            
+            .form-group{
+                padding: 5px;
+                margin-bottom: 0px;
+            }
         }
     }
-
+    #country_selector{
+        width: 250px !important;
+    }
 }
 .logo{    
-    /*img{
-        width: 700px;
-        display: block;
-        margin: 0 auto;
-    }*/
     .text{
         width: 700px;
         display: block;

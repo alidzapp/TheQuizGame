@@ -1,4 +1,9 @@
 Erko256{
     Színkódokat a _bootswatchvariables.scss-ben találtok, az scss-fájlban a változónevével lehet rá hivatkozni.
+
+    fun facts: 
+        Shift + Delete : egy egész sort kitöröl omg *-*
+        Alt + le/föl: kijelölést mozgat
+        Shift + Alt + le/föl : kijelölést klónoz
 }
 
