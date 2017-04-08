@@ -4,14 +4,19 @@ var passport = require('passport');
 require('./passportConfig');
 
 authRouter.route('/auth')
-    .get(function (req, res) {        
-        res.render('auth', {
-            messages: req.flash(),
-            additionalscripts: true,
-            additionalstylesheets : true
-        });
+    .get(function (req, res) {
+        if(!req.isAuthenticated()){            
+             res.render('auth', {
+                messages: req.flash(),
+                userdata: req.session.userdata,
+                additionalscripts: true,
+                additionalstylesheets : true
+            });
+        } else {
+            res.redirect('/');
+        }       
+       
     });
-
 
 authRouter.route('/auth/signin')
     .post(passport.authenticate('local-signin', {

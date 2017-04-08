@@ -12,7 +12,12 @@ passport.use('local-signup', new LocalStrategy({
     passwordField: 'password',
     passReqToCallback: true,
 },
-    function (req, username, password, done) {        
+    function (req, username, password, done) {
+        req.session.userdata = {};  // for keep user data, so the user doesn't have to retype it'd datas, if something is not valid in some of the givens.
+        req.session.userdata.suemail = req.body.email;   
+        req.session.userdata.name = req.body.name;
+        req.session.userdata.username = req.body.username;
+        req.session.userdata.confirmemail = req.body.confirmemail;         
         req.checkBody({
             'name': {
                 isLength: {
@@ -100,11 +105,14 @@ passport.use('local-signin', new LocalStrategy({
     passwordField: 'password',
     passReqToCallback: true,
 },
-    function (req, username, password, done) {        
+    function (req, username, password, done) {      
+        req.session.userdata = {};        
+        req.session.userdata.siemail = req.body.email;
+
         userStore.getUserByEmail(username, (err, user) => {
             if (err) {
                 done(err);
-            } else if (!user) {
+            } else if (!user) {                
                 done(null, false, { message: 'Incorrect email' });
             } else {
                 const passwordHash = hasher(password);

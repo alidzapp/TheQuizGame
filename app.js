@@ -37,12 +37,20 @@ app.use(cookieParser());
 app.use(validator());
 app.use(flash());
 
+function setLocalsForLayout() {
+    return function (req, res, next) {        
+        res.locals.user = req.user; //innentol elerheto az authentikalt user adata                   
+        next();
+    }
+}
+
+app.use(setLocalsForLayout());
+
 const authentication = require('./modules/authentication');
 app.use(authentication);
 
 const router = require('./routes') 
 app.use(router);
-
 
 
 module.exports = app;

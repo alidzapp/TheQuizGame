@@ -21,7 +21,7 @@
                             <label for="email" class="control-label ">Email</label>                        
                         </div>                       
                         <div class="col-lg-8 col-lg-offset-2">
-                            <input class="form-control" id="email" name="email" type="text" value="{{data.email}}">
+                            <input class="form-control" id="email" name="email" type="text" value="{{userdata.siemail}}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -47,11 +47,11 @@
                         <div class="left_column col-lg-6">
                             <div class="form-group">
                                 <label for="name" class="control-label ">Name</label>
-                                <input class="form-control" id="name" name="name" type="text">                                
+                                <input class="form-control" id="name" name="name" type="text" value="{{userdata.name}}">                                
                             </div>
                             <div class="form-group">
                                 <label for="email" class="control-label">Email</label>
-                                <input class="form-control" id="email" name="email" type="text">                                   
+                                <input class="form-control" id="email" name="email" type="text" value="{{userdata.suemail}}">                                   
                             </div>
                             <div class="form-group">
                                 <label for="password" class="control-label">Password</label>                                
@@ -61,11 +61,11 @@
                         <div class="right_column col-lg-6">
                             <div class="form-group">
                                 <label for="username" class=" control-label">Username</label>
-                                <input class="form-control" id="username" name="username" type="text">
+                                <input class="form-control" id="username" name="username" type="text" value="{{userdata.username}}">
                             </div>
                             <div class="form-group">
                                 <label for="confirmemail" class="control-label">Confirm email</label>
-                                <input class="form-control" id="confirmemail" name="confirmemail" type="text">
+                                <input class="form-control" id="confirmemail" name="confirmemail" type="text" value="{{userdata.confirmemail}}">
                             </div>
                             <div class="form-group">
                                 <label for="confirmpassword" class="control-label">Confirm password</label>

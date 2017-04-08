@@ -6,6 +6,7 @@ module.exports = class User {
         this._email = email;
         this._country = country;
         this._passwordHash = passwordHash;
+        this._avatar = '';
         this._playedTopics = {};
         this._gamesPlayed = {};
     }
@@ -25,7 +26,9 @@ module.exports = class User {
             this._gamesPlayed = gamesPlayed;
         }
     }
-
+    setAvatar(avatar){
+        this._avatar = avatar;
+    }
     addTopic(topic) {
         this._playedTopics.add(topic);
     } 
@@ -60,7 +63,9 @@ module.exports = class User {
     getCountry(){
         return this._country;
     }
-
+    getAvatar(){
+        return this._avatar;
+    }
     validPassword(trialHash) {
         return this._passwordHash === trialHash;
     }
